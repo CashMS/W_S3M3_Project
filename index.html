@@ -89,9 +89,11 @@
     // ❗ Notes
     // 🧠 Try using destructuring to grab the name, and a return followed by a ternary expression.
     const recognize = (user) => {
-      const {name} = 
-
+      if (!user) return "NO"
+      const {name} = user;
+      return !user.name ? "Hidden Person Rocks!": `${name} Rules!`;
     }
+    console.log(recognize())
     recognize()
 
     // 👉 CHALLENGE 5
