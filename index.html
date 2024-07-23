@@ -54,15 +54,10 @@
     // 🧠 Try using the ternary operator instead of a conditional statement when deciding what to return.
     // 🧠 So instead of doing `if ('foo') return 'bar' else return 'baz'` do `return 'foo' ? 'bar' : 'baz'`
     // 🧠 The above recommendations allow to write the whole function body in just two clean lines!
-    const headAndTail = (...arr) => {
-      if (arr.length === 1 && Array.isArray(arr[0])) {
-        arr = arr[0]
-      }
+    const headAndTail = (arr) => {
       const [head, ...tail] = arr;
       return arr.length === 0 ? "This array is empty": [head, tail]
     }
-    console.log(headAndTail(1, 2, 3, 4, 5))
-    headAndTail()
 
     // 👉 CHALLENGE 3
     // 🧠 The function devGreet takes an isFrontend Boolean, and an isHappy Boolean, as arguments.
@@ -116,8 +111,14 @@
     // 🧠 Split the string but do not use the reverse method of arrays. Let's do it manually.
     // 🧠 We suggest using a for loop. Research how to loop backwards over an array, starting at the last element.
     // 🧠 Use a ternary in the return statement.
-    const reverseString = () => {
-
+    const reverseString = (string) => {
+      const words = string.split(" ");
+      const fWord = words[0];
+      const fChar = fWord.charAt(0);
+      const lChar = fWord.charAt(fWord.length - 1);
+      for (var i = words.length - 1; i >= 0; i--) {
+        return fChar === lChar ? "It's a palindrome!": string.split("").reverse().join("");
+      }
     }
 
     // 👉 CHALLENGE 7
@@ -132,8 +133,15 @@
     // ❗ Notes
     // 🧠 Even though object properties have no particular order, to avoid confusing
     // the test runner, please set in each object first name, then age, and finally jsLover.
-    const zip = () => {
-
+    const zip = (name, born, jsLover) => {
+      const result = [];
+      for (let i = 0; i < name.length; i++) {
+        const n = name[i];
+        const b = born[i];
+        const j = jsLover[i];
+        result.push({ name: n, born: b, jsLover: j });
+      }
+      return result;
     }
 
     // 🧪 TESTS, do not work below this line
