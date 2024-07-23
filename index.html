@@ -103,11 +103,8 @@
     // processBooleans([1, 0, 0, 1, 0]) // should return ["Y", "N", "N", "Y", "N"]
     // ❗ Notes
     // 🧠 Using map, arrow function syntax, and the ternary, you can make this function a short one-liner
-    const processBooleans = (...int) => {
-      return int.map(no => no === 1 ? "Y": "N");
-    }
-    console.log(processBooleans(1, 0, 0, 1))
-    processBooleans()
+    const processBooleans = (int) => int.map(no => no === 1 ? "Y": "N");
+    processBooleans(([1, 0, 0, 1, 0]))
 
     // 👉 CHALLENGE 6
     // 🧠 The function reverseString takes a string as its argument, and returns it reversed.
