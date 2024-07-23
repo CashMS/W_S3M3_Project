@@ -73,8 +73,10 @@
     // devGreet(false, false) // should return "Hey, I am a backend dev and I am sad"
     // ❗ Notes
     // 🧠 Use ternary expressions to construct the string.
-    const devGreet = () => {
-
+    const devGreet = (isFrontend, isHappy) => {
+      let yes = isFrontend === true ? "Hey, I am a frontend dev and I am ": "Hey, I am a backend dev and I am ";
+      let no = isHappy === true ? "happy": "sad";
+      return yes + no;
     }
 
     // 👉 CHALLENGE 4
@@ -86,9 +88,11 @@
     // recognize({}) // should return "Hidden Person Rocks!"
     // ❗ Notes
     // 🧠 Try using destructuring to grab the name, and a return followed by a ternary expression.
-    const recognize = () => {
+    const recognize = (user) => {
+      const {name} = 
 
     }
+    recognize()
 
     // 👉 CHALLENGE 5
     // 🧠 The function processBooleans takes an array of Booleans represented using integers (1/0 instead of true/false)
