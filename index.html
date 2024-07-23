@@ -29,10 +29,18 @@
     // ❗ Notes
     // 🧠 Try using destructuring to grab a reference to the first element of the array
     // 🧠 Try using the at method of arrays to grab the last element
-    const swapper = () => {
-
+    const swapper = (arr) => {
+      if (!Array.isArray(arr) || arr.length < 2) {
+        return "No swap performed";
+      } else {
+      const [first] = arr;
+      const last = arr.at(-1);
+      arr[0] = last;
+      arr[arr.length -1] = first;
+      return arr;
+      }
     }
-
+    swapper();
     // 👉 CHALLENGE 2
     // 🧠 The function headAndTail takes an array as its argument.
     // 🧠 It returns a new array with two elements.
@@ -46,9 +54,15 @@
     // 🧠 Try using the ternary operator instead of a conditional statement when deciding what to return.
     // 🧠 So instead of doing `if ('foo') return 'bar' else return 'baz'` do `return 'foo' ? 'bar' : 'baz'`
     // 🧠 The above recommendations allow to write the whole function body in just two clean lines!
-    const headAndTail = () => {
-
+    const headAndTail = (...arr) => {
+      if (arr.length === 1 && Array.isArray(arr[0])) {
+        arr = arr[0]
+      }
+      const [head, ...tail] = arr;
+      return arr.length === 0 ? "This array is empty": [head, tail]
     }
+    console.log(headAndTail(1, 2, 3, 4, 5))
+    headAndTail()
 
     // 👉 CHALLENGE 3
     // 🧠 The function devGreet takes an isFrontend Boolean, and an isHappy Boolean, as arguments.
